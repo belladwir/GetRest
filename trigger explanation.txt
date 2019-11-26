@@ -1,0 +1,13 @@
+AFTER INSERT
+ada yang reservasi
+BEGIN
+UPDATE rooms SET quantity = quantity - NEW.total_room
+WHERE id = NEW.id_room;
+END
+
+AFTER UPDATE
+ada yang checkout
+BEGIN
+UPDATE rooms SET quantity = quantity + NEW.total_room
+WHERE id = NEW.id_room;
+END

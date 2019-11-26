@@ -1,0 +1,31 @@
+<?php
+if($_POST['content']=='home'){
+?>
+<script>
+    $.ajax({
+		url:"fetch.php",
+		method:"POST",
+		success:function(data)
+			{
+				$('#user_data').html(data);
+			}
+		});
+</script>
+<?php
+}
+else if($_POST['content']=='room'){
+?>
+<script>
+    $.ajax({
+		url:"roomFetch.php",
+		method:"POST",
+		success:function(data)
+			{
+				$('#user_data').html(data);
+			}
+		});
+</script>
+
+<?php
+}
+?>
